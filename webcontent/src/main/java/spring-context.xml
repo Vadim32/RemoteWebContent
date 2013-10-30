@@ -20,7 +20,7 @@
 							
 		</bean>
 		
-		
+		 
 		<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		
 			<property name="dataSource" ref="dataSource"></property>
@@ -50,7 +50,7 @@
 		<bean id="webContentDAOImpl" class="demidov.pkg.persistence.WebContentDAOImpl">
 			<property name="sessionFactory" ref="sessionFactory"/>
 		</bean>
-		
+		 
 		
 		<tx:annotation-driven/>
 				
