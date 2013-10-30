@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+	
+		<hibernate-mapping package="demidov.pkg.domain">
+		
+			
+			<class name="UserEvents" table="USER_EVENTS">
+			
+			
+				<id name="userEventId" column="ID" type="integer">
+					<generator class="native"/>
+					
+				</id>
+				
+			
+				<property name="userEventDate" column="EVENT_DATE" type="date"/>
+						
+				
+				<many-to-one name="theUser" class="TheUser" insert="false" update="false" lazy="false" fetch="select" cascade="save-update">
+					<column name="USER_ID" not-null="true"/>
+				</many-to-one>
+				
+				
+				<joined-subclass name="ComputerMaintenanceEvent" table="MAINTENANCE_EVENT">
+				
+					<key column="MAINTENANCE_ID" not-null="true"/>
+							
+					<property name="descriptionMaintenance" column="DESCRIPTION_MAINTENANCE" type="string"/>
+					<property name="additionalInfoMaintenance" column="ADDITIONAL_INFO_MAINTENANCE" type="string"/>
+					
+				</joined-subclass>				
+				
+				
+				<joined-subclass name="SoftwareDevelopmentEvent" table="DEVELOPMENT_EVENT">
+				
+					<key column="DEVELOPMENT_ID" not-null="true"/>
+				
+					<property name="descriptionDevelopment" column="DESCRIPTION_DEVELOPMENT" type="string"/>
+					<property name="additionalInfoDevelopment" column="ADDITIONAL_INFO_DEVELOPMENT" type="string"/>
+					
+				</joined-subclass>
+								
+				
+			</class>
+		
+		
+		</hibernate-mapping>

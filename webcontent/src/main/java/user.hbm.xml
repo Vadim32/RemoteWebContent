@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+	<hibernate-mapping package="demidov.pkg.domain">
+	
+	
+		<class name="TheUser" table="USER">
+						
+			<id name="userId" column="ID" type="integer" >
+				<generator class="native"/>			
+			</id>
+		
+		
+			<discriminator  column="USER_INFO_TYPE" type="string"/>
+		
+		
+			<property name="userFirstName" column="FIRST_NAME" type="string"/>
+			<property name="userLastName" column="LAST_NAME" type="string"/>
+			<property name="userPassword" column="PASSWORD" type="string"/>
+			<property name="userEmale" column="EMALE" type="string"/>
+			<property name="roleAccess" column="ROLE_ACCESS" type="string"/>
+			<property name="userGender" column="GENDER" type="string"/>
+								
+			
+			<list name="userEventsList" inverse="false" lazy="true" fetch="select" cascade="all" >
+			
+				<key column="USER_ID" not-null="true" />
+				
+				<index column="EVENT_INDEX" />			
+							
+				<one-to-many class="UserEvents"/>		
+				
+			</list>
+			
+			
+			<subclass name="UserContactInfo" discriminator-value="UCI" >
+			
+				<property name="personAddress" column="UCI_PERSON_ADDRESS" />
+				<property name="personPhoneNumber" column="UCI_PERSON_PHONE" />
+						
+			</subclass>
+			
+		
+		</class>
+	
+		
+	</hibernate-mapping>
