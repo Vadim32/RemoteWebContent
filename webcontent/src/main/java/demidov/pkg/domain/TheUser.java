@@ -41,19 +41,7 @@ public class TheUser {
 			this.userLastName = userLastName;
 		}
 	
-	
-		
-	private String userPassword;
-
-		public String getUserPassword() {
-			return userPassword;
-		}
-	
-		public void setUserPassword(String userPassword) {
-			this.userPassword = userPassword;
-		}
-		
-		
+			
 		
 	private String userEmale;
 
@@ -65,18 +53,28 @@ public class TheUser {
 			this.userEmale = userEmale;
 		}
 		
+	
+	private String personAddress;
 		
-		
-	private String roleAccess;
-			
-		public String getRoleAccess() {
-			return roleAccess;
+		public String getPersonAddress() {
+			return personAddress;
 		}
 	
-		public void setRoleAccess(String roleAccess) {
-			this.roleAccess = roleAccess;
+		public void setPersonAddress(String personAddress) {
+			this.personAddress = personAddress;
 		}
-
+	
+	
+	
+	private String personPhoneNumber;
+		
+		public String getPersonPhoneNumber() {
+			return personPhoneNumber;
+		}
+	
+		public void setPersonPhoneNumber(String personPhoneNumber) {
+			this.personPhoneNumber = personPhoneNumber;
+		}
 
 
 	private String userGender;

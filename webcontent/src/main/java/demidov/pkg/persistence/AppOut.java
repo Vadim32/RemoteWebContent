@@ -33,13 +33,13 @@ public class AppOut {
 		l.add(cme);*/
 				
 		TheUser user = new TheUser();
-		user.setUserFirstName("Vadim");
-		user.setUserLastName("Dem");
-		user.setUserGender("Male");
+		user.setUserFirstName("Vadim1");
+		user.setUserLastName("Dem1");
+		user.setUserGender("Male1");
 		user.setUserEmale("vad@mail.ru");
-		user.setRoleAccess("ROLE_USER");
-		user.setUserPassword("123");
-		
+		user.setPersonAddress("Adress");
+		user.setPersonPhoneNumber("1111111");
+				
 				
 		dao.saveUser(user);		
 		
