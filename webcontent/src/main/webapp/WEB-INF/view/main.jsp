@@ -30,7 +30,8 @@
 						<ul class="nav pull-right">	
 								<li><a href="#section-1"><b>PROJECTS</b></a> </li>							
 								<li><a href="#section-2"><b>SOCIAL</b></a></li>	
-								<li><a href="#section-3"><b>ABOUT ME</b></a></li>							
+								<li><a href="#section-3"><b>ABOUT ME</b></a></li>	
+								<li><a href="#section-4"><b>ORDER EVENT</b></a></li>
 							</ul>												
 						</div>			
 					</div>			
@@ -96,6 +97,15 @@
 							<p><font color="#ffffff">Here is going to be my biografy description<br/>
 							And here continue....</font></p>
 							<a href="#" class="btn">See Java</a>
+						</div>
+					</div>	
+				</div>
+			
+				<div class="hero-unit" id="section-4">
+					<div class="row">
+						<div class="span12">
+							<p><font color="#ffffff">Some text of order and picture continue....</font></p>
+							<a href="#" class="btn">Go to order</a>
 						</div>
 					</div>	
 				</div>
