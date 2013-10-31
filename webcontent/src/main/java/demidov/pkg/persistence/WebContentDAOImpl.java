@@ -1,20 +1,11 @@
 package demidov.pkg.persistence;
 
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.GrantedAuthorityImpl;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.transaction.annotation.Transactional;
 
 import demidov.pkg.domain.SoftwareDevelopmentEvent;
@@ -61,7 +52,7 @@ public class WebContentDAOImpl implements WebContentDAOIF {
 
 
 
-	public void saveUser(TheUser user) {
+	public void saveUser(UserEvents user) {
 		
 		Session session = sessionFactory.getCurrentSession();
 		

@@ -24,23 +24,6 @@ public class AppOut {
 		WebContentDAOIF dao =(WebContentDAOIF) context.getBean("webContentDAOImpl", WebContentDAOIF.class);
 		
 		
-		List<UserEvents> eventList  = new ArrayList<UserEvents>();
-		
-		
-		SoftwareDevelopmentEvent sde = new SoftwareDevelopmentEvent();
-		sde.setDescriptionDevelopment("Develop");
-		sde.setAdditionalInfoDevelopment("Development Test");
-		sde.setUserEventDate(new Date());
-		eventList.add(sde);
-	
-		
-		ComputerMaintenanceEvent cme = new ComputerMaintenanceEvent();
-		cme.setDescriptionMaintenance("Description maitnance");
-		cme.setAdditionalInfoMaintenance(" Maitnance Test");
-		cme.setUserEventDate(new Date());
-		eventList.add(cme);
-		
-		
 		TheUser user = new TheUser();
 		user.setUserFirstName("Vadim1");
 		user.setUserLastName("Dem1");
@@ -48,10 +31,22 @@ public class AppOut {
 		user.setUserEmale("vad@mail.ru");
 		user.setPersonAddress("Adress");
 		user.setPersonPhoneNumber("1111111");
-			
-			user.setUserEventsList(eventList);
 		
-			dao.saveUser(user);
+		
+		SoftwareDevelopmentEvent sde = new SoftwareDevelopmentEvent();
+		sde.setDescriptionDevelopment("Develop");
+		sde.setAdditionalInfoDevelopment("Development Test");
+		sde.setUserEventDate(new Date());
+		sde.setTheUser(user);
+			
+		ComputerMaintenanceEvent cme = new ComputerMaintenanceEvent();
+		cme.setDescriptionMaintenance("Description maitnance");
+		cme.setAdditionalInfoMaintenance(" Maitnance Test");
+		cme.setUserEventDate(new Date());
+		cme.setTheUser(user);
+		
+			dao.saveUser(sde);
+			dao.saveUser(cme);
 		
 		/*List<UserEvents> l = new ArrayList<UserEvents>();
 							

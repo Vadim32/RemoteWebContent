@@ -19,7 +19,7 @@
 				<property name="userEventDate" column="EVENT_DATE" type="date"/>
 						
 				
-				<many-to-one name="theUser" class="TheUser" insert="false" update="false" lazy="false" fetch="select" cascade="save-update">
+				<many-to-one name="theUser" class="TheUser" lazy="false" fetch="select" cascade="save-update">
 					<column name="USER_ID" not-null="true"/>
 				</many-to-one>
 				

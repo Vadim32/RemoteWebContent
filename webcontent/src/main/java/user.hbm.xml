@@ -22,7 +22,7 @@
 			<property name="userGender" column="GENDER" type="string"/>
 								
 			
-			<list name="userEventsList" inverse="false" lazy="true" fetch="select" cascade="all" >
+			<list name="userEventsList" inverse="true" lazy="true" fetch="select" cascade="all" >
 			
 				<key column="USER_ID" not-null="true" />
 				
