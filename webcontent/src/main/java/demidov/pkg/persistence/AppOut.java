@@ -31,6 +31,7 @@ public class AppOut {
 		user.setUserEmale("vad@mail.ru");
 		user.setPersonAddress("Adress");
 		user.setPersonPhoneNumber("1111111");
+		user.setSessionUserId("1231321313");
 		
 		List<UserEvents> list =  new ArrayList<UserEvents>(); 
 		

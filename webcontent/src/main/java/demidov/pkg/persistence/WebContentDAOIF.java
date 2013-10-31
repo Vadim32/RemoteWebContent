@@ -15,5 +15,6 @@ public interface WebContentDAOIF {
 	
 	public TheUser fetchUserByName(String userName);
 	
+	public List<String> fetchAllSessionIds();
 	
 }

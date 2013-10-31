@@ -13,7 +13,7 @@
 				<generator class="native"/>			
 			</id>
 		
-						
+			<property name="sessionUserId" column="USER_SESSION_ID" type="string" not-null="true"/>
 			<property name="userFirstName" column="FIRST_NAME" type="string" not-null="true"/>
 			<property name="userLastName" column="LAST_NAME" type="string"/>
 			<property name="userEmale" column="EMALE" type="string" not-null="true"/>

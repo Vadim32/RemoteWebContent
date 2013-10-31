@@ -69,6 +69,15 @@ public class WebContentDAOImpl implements WebContentDAOIF {
 																	    .setParameter("name", userName).uniqueResult();
 	}
 
+
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<String> fetchAllSessionIds() {
+		
+		return sessionFactory.getCurrentSession().createQuery("select u.sessionUserId from TheUser u").list();
+	}
+
  
 
 	
