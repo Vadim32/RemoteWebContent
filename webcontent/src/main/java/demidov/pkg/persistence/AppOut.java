@@ -32,21 +32,25 @@ public class AppOut {
 		user.setPersonAddress("Adress");
 		user.setPersonPhoneNumber("1111111");
 		
+		List<UserEvents> list =  new ArrayList<UserEvents>(); 
 		
 		SoftwareDevelopmentEvent sde = new SoftwareDevelopmentEvent();
 		sde.setDescriptionDevelopment("Develop");
 		sde.setAdditionalInfoDevelopment("Development Test");
 		sde.setUserEventDate(new Date());
 		sde.setTheUser(user);
+		list.add(sde);
 			
 		ComputerMaintenanceEvent cme = new ComputerMaintenanceEvent();
 		cme.setDescriptionMaintenance("Description maitnance");
 		cme.setAdditionalInfoMaintenance(" Maitnance Test");
 		cme.setUserEventDate(new Date());
 		cme.setTheUser(user);
+		list.add(cme);
 		
-			dao.saveUser(sde);
-			dao.saveUser(cme);
+			user.setUserEventsList(list);
+			
+			dao.saveUser(user);
 		
 		/*List<UserEvents> l = new ArrayList<UserEvents>();
 							

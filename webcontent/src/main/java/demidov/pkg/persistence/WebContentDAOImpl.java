@@ -52,7 +52,7 @@ public class WebContentDAOImpl implements WebContentDAOIF {
 
 
 
-	public void saveUser(UserEvents user) {
+	public void saveUser(TheUser user) {
 		
 		Session session = sessionFactory.getCurrentSession();
 		

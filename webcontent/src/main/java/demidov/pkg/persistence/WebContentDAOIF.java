@@ -7,7 +7,7 @@ import demidov.pkg.domain.UserEvents;
 
 public interface WebContentDAOIF {
 
-	public void saveUser(UserEvents user);	
+	public void saveUser(TheUser user);	
 	
 	public void saveUser2(Integer id, List<UserEvents> events);
 	

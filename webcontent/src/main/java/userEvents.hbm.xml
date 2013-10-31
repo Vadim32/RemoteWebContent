@@ -26,7 +26,7 @@
 				
 				<joined-subclass name="ComputerMaintenanceEvent" table="MAINTENANCE_EVENT">
 				
-					<key column="MAINTENANCE_ID" not-null="true"/>
+					<key column="MAINTENANCE_ID" not-null="true" unique="true"/>
 							
 					<property name="descriptionMaintenance" column="DESCRIPTION_MAINTENANCE" type="string"/>
 					<property name="additionalInfoMaintenance" column="ADDITIONAL_INFO_MAINTENANCE" type="string"/>
@@ -36,7 +36,7 @@
 				
 				<joined-subclass name="SoftwareDevelopmentEvent" table="DEVELOPMENT_EVENT">
 				
-					<key column="DEVELOPMENT_ID" not-null="true"/>
+					<key column="DEVELOPMENT_ID" not-null="true" unique="true" />
 				
 					<property name="descriptionDevelopment" column="DESCRIPTION_DEVELOPMENT" type="string"/>
 					<property name="additionalInfoDevelopment" column="ADDITIONAL_INFO_DEVELOPMENT" type="string"/>
