@@ -9,19 +9,16 @@
 	
 		<class name="TheUser" table="USER">
 						
-			<id name="userId" column="ID" type="integer" >
+			<id name="userId" column="ID" type="integer">
 				<generator class="native"/>			
 			</id>
 		
-		
-			
-		
-		
-			<property name="userFirstName" column="FIRST_NAME" type="string"/>
+						
+			<property name="userFirstName" column="FIRST_NAME" type="string" not-null="true"/>
 			<property name="userLastName" column="LAST_NAME" type="string"/>
-			<property name="userEmale" column="EMALE" type="string"/>
-			<property name="personAddress" column="PERSON_ADDRESS" />
-			<property name="personPhoneNumber" column="PERSON_PHONE" />
+			<property name="userEmale" column="EMALE" type="string" not-null="true"/>
+			<property name="personAddress" column="PERSON_ADDRESS" type="string" />
+			<property name="personPhoneNumber" column="PERSON_PHONE" type="string" />
 			<property name="userGender" column="GENDER" type="string"/>
 								
 			
@@ -36,8 +33,6 @@
 			</list>
 			
 			
-					
-		
 		</class>
 	
 		
