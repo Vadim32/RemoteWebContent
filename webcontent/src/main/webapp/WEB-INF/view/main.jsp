@@ -1,6 +1,13 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 	<html>
 		
 		<head>
@@ -26,13 +33,15 @@
 			<div class="navbar navbar-fixed-bottom" id="mymenu">
 				<div class="navbar-inner">
 					<div class="container">
-					  
-						<ul class="nav pull-right">	
+					     	<ul class="nav pull-right">	
 								<li><a href="#section-1"><b>PROJECTS</b></a> </li>							
 								<li><a href="#section-2"><b>SOCIAL</b></a></li>	
 								<li><a href="#section-3"><b>ABOUT ME</b></a></li>	
 								<li><a href="#section-4"><b>ORDER EVENT</b></a></li>
-							</ul>												
+							</ul>	
+							<ul class="nav pull-left">
+								<li><a href="#">Welcome: ${userName}</a>
+							</ul>											
 						</div>			
 					</div>			
 				</div>

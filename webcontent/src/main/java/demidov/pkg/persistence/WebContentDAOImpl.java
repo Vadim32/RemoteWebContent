@@ -78,6 +78,14 @@ public class WebContentDAOImpl implements WebContentDAOIF {
 		return sessionFactory.getCurrentSession().createQuery("select u.sessionUserId from TheUser u").list();
 	}
 
+
+
+	@Override
+	public String fetchUserNameBySessionId(String userSessionId) {
+		
+		return (String)sessionFactory.getCurrentSession().createQuery("select u.userFirstName from TheUser u where u.sessionUserId =:userSessionId").setParameter("userSessionId", userSessionId).uniqueResult();
+	}
+
  
 
 	

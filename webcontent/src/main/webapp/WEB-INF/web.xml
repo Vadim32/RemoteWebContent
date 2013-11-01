@@ -11,13 +11,18 @@
   </listener>
   
   <filter>
-  	<filter-name>userFilter</filter-name>
-  	<filter-class>demidov.pkg.web.UserFilter</filter-class>
+	  <filter-name>userFilter</filter-name>
+	  <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	  
+	  <init-param>
+	    <param-name>contextConfigLocation</param-name>
+	    <param-value>userFilter</param-value>
+	  </init-param> 
   </filter>
-  
+   
   <filter-mapping>
-  	<filter-name>userFilter</filter-name>
-  	<url-pattern>/*</url-pattern>
+	  <filter-name>userFilter</filter-name>
+	  <url-pattern>/*</url-pattern>
   </filter-mapping>
   
   <servlet>

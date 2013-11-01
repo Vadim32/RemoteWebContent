@@ -25,33 +25,19 @@ public class AppOut {
 		
 		
 		TheUser user = new TheUser();
-		user.setUserFirstName("Vadim1");
+		user.setUserFirstName("Vadim101");
 		user.setUserLastName("Dem1");
 		user.setUserGender("Male1");
 		user.setUserEmale("vad@mail.ru");
 		user.setPersonAddress("Adress");
 		user.setPersonPhoneNumber("1111111");
 		user.setSessionUserId("1231321313");
-		
-		List<UserEvents> list =  new ArrayList<UserEvents>(); 
-		
-		SoftwareDevelopmentEvent sde = new SoftwareDevelopmentEvent();
-		sde.setDescriptionDevelopment("Develop");
-		sde.setAdditionalInfoDevelopment("Development Test");
-		sde.setUserEventDate(new Date());
-		sde.setTheUser(user);
-		list.add(sde);
+		user.setSessionUserId("E8DF56BBBC57CBAC8BFF10B941DF57C3");
+		 dao.saveUser(user);
 			
-		ComputerMaintenanceEvent cme = new ComputerMaintenanceEvent();
-		cme.setDescriptionMaintenance("Description maitnance");
-		cme.setAdditionalInfoMaintenance(" Maitnance Test");
-		cme.setUserEventDate(new Date());
-		cme.setTheUser(user);
-		list.add(cme);
-		
-			user.setUserEventsList(list);
 			
-			dao.saveUser(user);
+			
+			
 		
 		/*List<UserEvents> l = new ArrayList<UserEvents>();
 							
