@@ -65,6 +65,7 @@ public class TheUser {
 			this.userEmale = userEmale;
 		}
 		
+		
 	
 	private String personAddress;
 		
@@ -89,18 +90,7 @@ public class TheUser {
 		}
 
 
-	private String userGender;
 				
-		public String getUserGender() {
-			return userGender;
-		}
-	
-		public void setUserGender(String userGender) {
-			this.userGender = userGender;
-		}
-
-	
-			
 	private List<UserEvents> userEventsList = new ArrayList<UserEvents>();
 
 		public List<UserEvents> getUserEventsList() {

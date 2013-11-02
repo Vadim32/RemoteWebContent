@@ -27,7 +27,7 @@ public class AppOut {
 		TheUser user = new TheUser();
 		user.setUserFirstName("Vadim101");
 		user.setUserLastName("Dem1");
-		user.setUserGender("Male1");
+		
 		user.setUserEmale("vad@mail.ru");
 		user.setPersonAddress("Adress");
 		user.setPersonPhoneNumber("1111111");

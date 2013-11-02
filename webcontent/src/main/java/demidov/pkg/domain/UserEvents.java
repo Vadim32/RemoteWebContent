@@ -30,8 +30,20 @@ public class UserEvents {
 			this.userEventDate = userEventDate;
 		}
 	
+		
+		
+	private Date userOrderDate;
+		
+		public Date getUserOrderDate() {
+			return userOrderDate;
+		}
 	
-	
+		public void setUserOrderDate(Date userOrderDate) {
+			this.userOrderDate = userOrderDate;
+		}
+
+
+
 	protected TheUser theUser;
 
 		public TheUser getTheUser() {

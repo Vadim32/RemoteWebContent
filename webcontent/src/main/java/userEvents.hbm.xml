@@ -17,6 +17,7 @@
 				
 			
 				<property name="userEventDate" column="EVENT_DATE" type="date"/>
+				<property name="userOrderDate" column="ORDER_DATE" type="date"/>
 						
 				
 				<many-to-one name="theUser" class="TheUser" lazy="false" fetch="select" cascade="save-update">

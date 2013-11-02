@@ -1,48 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
-  
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>/WEB-INF/*-context.xml</param-value>
-  </context-param>
-  
-  <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
-  
-  <filter>
-	  <filter-name>userFilter</filter-name>
-	  <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-	  
-	  <init-param>
+
+
+	  <context-param>
 	    <param-name>contextConfigLocation</param-name>
-	    <param-value>userFilter</param-value>
-	  </init-param> 
-  </filter>
-   
-  <filter-mapping>
-	  <filter-name>userFilter</filter-name>
-	  <url-pattern>/*</url-pattern>
-  </filter-mapping>
+	    <param-value>/WEB-INF/*-context.xml</param-value>
+	  </context-param>
+	  
+	  
+	  <listener>
+	    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	  </listener>
+	  
+	  
+	  <filter>
+	    <filter-name>userFilter</filter-name>
+	    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	    <init-param>
+	      <param-name>contextConfigLocation</param-name>
+	      <param-value>userFilter</param-value>
+	    </init-param>
+	  </filter>
+	  
+	  <filter-mapping>
+	    <filter-name>userFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	  </filter-mapping>
+	  
+	  
+	  <servlet>
+	    <servlet-name>initialContentRendering</servlet-name>
+	    <servlet-class>demidov.pkg.web.InitialContentRendering</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	    <servlet-name>initialContentRendering</servlet-name>
+	    <url-pattern>/main</url-pattern>
+	  </servlet-mapping>
+	  <servlet>
+	  
+	  
+	   <servlet-name>orderEventServlet</servlet-name>
+	    <servlet-class>demidov.pkg.web.OrderEventServlet</servlet-class>
+	   </servlet>
+	  
+	  <servlet-mapping>
+	    <servlet-name>orderEventServlet</servlet-name>
+	    <url-pattern>/event</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  <servlet>
+	  	<servlet-name>eventNewUserServlet</servlet-name>
+	    <servlet-class>demidov.pkg.web.EventNewUserServlet</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	    <servlet-name>eventNewUserServlet</servlet-name>
+	    <url-pattern>/new-user-event</url-pattern>
+	  </servlet-mapping>
+	  
+	  
+	  <servlet>
+	  	<servlet-name>eventExistedUserServlet</servlet-name>
+	    <servlet-class>demidov.pkg.web.EventExistedUserServlet</servlet-class>
+	  </servlet>
+	  
+	  <servlet-mapping>
+	    <servlet-name>eventExistedUserServlet</servlet-name>
+	    <url-pattern>/existed-user-event</url-pattern>
+	  </servlet-mapping>
   
-  <servlet>
-    <servlet-name>initialContentRendering</servlet-name>
-    <servlet-class>demidov.pkg.web.InitialContentRendering</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>initialContentRendering</servlet-name>
-    <url-pattern>/main</url-pattern>
-  </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>orderEventServlet</servlet-name>
-  	<servlet-class>demidov.pkg.web.OrderEventServlet</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-  	<servlet-name>orderEventServlet</servlet-name>
-  	<url-pattern>/event</url-pattern>
-  </servlet-mapping>
   
 </web-app>

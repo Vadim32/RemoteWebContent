@@ -16,8 +16,7 @@
 			<property name="driverClassName"><value>com.mysql.jdbc.Driver</value></property>
 			<property name="url"><value>jdbc:mysql://localhost:3306/contentDB</value></property> 
 			<property name="username"><value>root</value></property>
-			<property name="password" ><value>25051988</value></property>
-							
+			<property name="password" ><value>25051988</value></property>	
 		</bean>
 		
 		 
@@ -58,10 +57,10 @@
 			<property name="sessionFactory" ref="sessionFactory"/>
 		</bean>
 		
-				
+		<!-- Declare user filter bean in spring container -->
 		<bean id="userFilter" class="demidov.pkg.web.UserFilter">
 			<property name="webContentDAOIF" ref="webContentDAOImpl"/>
 		</bean>		
 		
-		
+				
 </beans>

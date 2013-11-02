@@ -19,8 +19,7 @@
 			<property name="userEmale" column="EMALE" type="string" not-null="true"/>
 			<property name="personAddress" column="PERSON_ADDRESS" type="string" />
 			<property name="personPhoneNumber" column="PERSON_PHONE" type="string" />
-			<property name="userGender" column="GENDER" type="string"/>
-								
+											
 			
 			<list name="userEventsList" inverse="true" lazy="true" fetch="select" cascade="all" >
 			
