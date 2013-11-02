@@ -32,10 +32,8 @@
 					<tr><td>Event date:</td> <td><input type="text" class="span2" name="user_event_date"></td></tr>
 					<tr><td>Event description:</td> <td><textarea rows="5" name="description"></textarea></td></tr>
 					<tr><td>Additional Info:</td> <td><input type="text" class="span2" name="additional_info"></td></tr>
-										
-					
-					
-					<tr><td><input type="submit" value="Regester user"></td></tr>
+											
+					<tr><td><input type="submit" value="Regester event"></td></tr>
 					
 				</table>
 				

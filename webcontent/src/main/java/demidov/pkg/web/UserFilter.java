@@ -76,24 +76,24 @@ public class UserFilter implements Filter {
 							 sessionIdsList.size() != 0 
 							   && 
 								sessionIdsList.contains(userSessionId)) {
-					
-						session.setAttribute("isNewUser", false);
+						
+						session.setAttribute("isNewUser", "false");
 						session.setAttribute("userName", webContentDAOIF.fetchUserNameBySessionId(userSessionId));
 										
 					 	} else {
-					
-							session.setAttribute("isNewUser", true);
+					 		
+							session.setAttribute("isNewUser", "true");
 							session.setAttribute("userName", ANONIM_USER_NAME); //User is new user or not registered user. Default name will apply to user
 						    }
 				
 					//Check to where particular user request goes and forward it on special servlet url
 				   //If no servlet url found forward it on page stub.
-					if(httpRequest.getServletPath().equals("/main"))
+					if(httpRequest.getServletPath().equals("/main")) 
 						
-								forwardUserRequests(request, response, "/main");
+							forwardUserRequests(request, response, "/main");
 							
-						 else if(httpRequest.getServletPath().equals("/event")) 
-		
+					   else if(httpRequest.getServletPath().equals("/event")) 
+						
 							 		forwardUserRequests(request, response, "/event");
 					
 							 else 

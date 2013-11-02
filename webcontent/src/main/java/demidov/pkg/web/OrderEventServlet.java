@@ -43,17 +43,19 @@ public class OrderEventServlet extends HttpServlet {
 	    
 		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
-				boolean isNewUser; //This variable keeps status of a user false=user not new, true=user is new 
+				String isNewUser; //This variable keeps status of a user false=user not new, true=user is new 
 			
 				HttpSession session = request.getSession(); //Get user status attribute is user new or not new
-					isNewUser = (boolean) session.getAttribute("isNewUser");
+					isNewUser = (String) session.getAttribute("isNewUser");
 													
 				//When user request url of this servlet doGet(..) method it forward it to event.jsp page
-				if(isNewUser == true)
+				if(isNewUser.equals("true"))
 						forwardUserRequests(request, response, "/WEB-INF/view/event_newuser.jsp");
 				
-					 else 	
-						forwardUserRequests(request, response, "/WEB-INF/view/event_existeduser.jsp");		
-					  
+					 else if(isNewUser.equals("false"))
+						 	forwardUserRequests(request, response, "/WEB-INF/view/event_existeduser.jsp");
+				
+					 		else
+					 			forwardUserRequests(request, response, "/WEB-INF/view/stubURL.jsp");
 		    }
 }

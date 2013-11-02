@@ -1,9 +1,10 @@
 package demidov.pkg.web;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +16,7 @@ import demidov.pkg.domain.TheUser;
 import demidov.pkg.domain.UserEvents;
 import demidov.pkg.persistence.WebContentDAOIF;
 
+
 /**
  * Servlet implementation class EventNewUserServlet
  */
@@ -25,13 +27,12 @@ public class EventNewUserServlet extends HttpServlet {
 	
 		private static final long serialVersionUID = 1L;
 	       
-		private WebContentDAOIF webContentDAOIF;
+		protected WebContentDAOIF webContentDAOIF;
 	
 		
 	//-------------------------Servlet methods------------------  
 	
 	 public void init() {
-	    	
     	 /*Getting bean from spring ContextLoaderListener and inject it to webContentDAOIF variable 
     	   to use webContentDAOIF in this servlet*/
     	ApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
@@ -41,19 +42,29 @@ public class EventNewUserServlet extends HttpServlet {
 	
 	 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				
-		TheUser user = new TheUser();
-			user.setSessionUserId(request.getParameter("userSessionId"));
-			user.setUserFirstName(request.getParameter("first_name"));
-			user.setUserLastName(request.getParameter("last_name"));
-			user.setUserEmale(request.getParameter("e_male"));
-			user.setPersonAddress(request.getParameter("address"));
-			user.setPersonPhoneNumber(request.getParameter("phone_number"));
+					
+			
+			List<UserEvents> userEventsList = new ArrayList<UserEvents>(2); //This list store all user orders 
 		
-		UserEvents event;
+						
+			if(!request.getParameter("event_type").isEmpty()  
+				&& 
+				request.getParameter("event_type").equals("Software Development Event")) {
+							
+						System.out.println();
 				
-			webContentDAOIF.saveUser(user);
-		
-	}
-
+				} else if(!request.getParameter("event_type").isEmpty() 
+						   && 
+						   request.getParameter("event_type").equals("Computer Maintenance Event"))  {
+				
+					 MaintenanceNewUserConstructor computerMaintenanceNewUser  = new MaintenanceNewUserConstructor();
+					 	TheUser user = computerMaintenanceNewUser.newUserConstructor(request, userEventsList);
+					 		userEventsList.add(computerMaintenanceNewUser.newMaintenanceEventConstructor(request, user));
+								
+							   webContentDAOIF.saveUser(user);
+								
+				 	} else {
+						 	System.out.println();
+				 			}
+		}
 }

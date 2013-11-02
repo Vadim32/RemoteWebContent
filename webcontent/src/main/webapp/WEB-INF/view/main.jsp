@@ -19,7 +19,7 @@
 			<!-- Bootstrap css responsive-->
     	    <link href="resources/css/bootstrap.css" rel="stylesheet">
     	    <link href="resources/css/bootstrap-responsive.css" rel="stylesheet">
-						
+    	   						
 		</head>
 		
 		<body>
@@ -40,7 +40,7 @@
 								<li><a href="#section-4"><b>ORDER EVENT</b></a></li>
 							</ul>	
 							<ul class="nav pull-left">
-								<li><a href="#">Welcome: ${userName}</a>
+								<li><b>Welcome: ${userName}</b></li>
 							</ul>											
 						</div>			
 					</div>			

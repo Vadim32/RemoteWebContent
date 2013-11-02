@@ -25,7 +25,8 @@
 	  
 	  <filter-mapping>
 	    <filter-name>userFilter</filter-name>
-	    <url-pattern>/*</url-pattern>
+	    <url-pattern>/main</url-pattern>
+	    <url-pattern>/event</url-pattern>
 	  </filter-mapping>
 	  
 	  
@@ -71,6 +72,6 @@
 	    <servlet-name>eventExistedUserServlet</servlet-name>
 	    <url-pattern>/existed-user-event</url-pattern>
 	  </servlet-mapping>
-  
+   
   
 </web-app>

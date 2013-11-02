@@ -24,7 +24,7 @@
 			<script src="resources/js/jquery.nav.js"></script>
 			
 			<h1>New user</h1>
-			<form action="event-new-user" method="post">
+			<form action="new-user-event" method="post">
 					
 					<input type="hidden" name="userSessionId" value="${userSessionId}">
 						
