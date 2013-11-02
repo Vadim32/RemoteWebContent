@@ -114,7 +114,7 @@
 					<div class="row">
 						<div class="span12">
 							<p><font color="#ffffff">Some text of order and picture continue....</font></p>
-							<a href="#" class="btn">Go to order</a>
+							<a href="event" class="btn">Go to order</a>
 						</div>
 					</div>	
 				</div>

@@ -46,7 +46,7 @@ public class OrderEventServlet extends HttpServlet {
 				boolean isNewUser; //This variable keeps status of a user false=user not new, true=user is new 
 			
 				HttpSession session = request.getSession(); //Get user status attribute is user new or not new
-					isNewUser = (boolean) session.getAttribute("new_user");
+					isNewUser = (boolean) session.getAttribute("isNewUser");
 													
 				//When user request url of this servlet doGet(..) method it forward it to event.jsp page
 				if(isNewUser == true)

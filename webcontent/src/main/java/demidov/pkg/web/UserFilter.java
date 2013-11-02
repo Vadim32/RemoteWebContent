@@ -77,14 +77,12 @@ public class UserFilter implements Filter {
 							   && 
 								sessionIdsList.contains(userSessionId)) {
 					
-						System.out.println("Old user");
-						session.setAttribute("new_user", false);
+						session.setAttribute("isNewUser", false);
 						session.setAttribute("userName", webContentDAOIF.fetchUserNameBySessionId(userSessionId));
 										
 					 	} else {
 					
-							System.out.println("New user");
-							session.setAttribute("new_user", true);
+							session.setAttribute("isNewUser", true);
 							session.setAttribute("userName", ANONIM_USER_NAME); //User is new user or not registered user. Default name will apply to user
 						    }
 				
